@@ -1,6 +1,15 @@
-import temperature as temp
-    
-tempInput = int(input("Enter the temperature you want to convert: "))
+from temperature import Temperature as temp, Celsius as cel, Fahrenheit as fah
+
+
+tempInput = float(input("Enter the temperature you want to convert: "))
 scaleInput = input("Enter the scale of the temperature you entered (C/F): ")
-newTemp = temp.Temperature(tempInput, scaleInput)
-print(f"Temperature in {scaleInput}: {newTemp}")
+
+def ConvertTemperature(tempInput, scaleInput):
+    if scaleInput == "C":
+        return cel(tempInput).convertFahrenheit()
+    elif scaleInput == "F":
+        return fah(tempInput).convertCelsius()
+    else:
+        return "Invalid scale"
+newTemp = ConvertTemperature(tempInput, scaleInput)
+print(f"Temperature in {newTemp.scale}: {newTemp.temp}")
