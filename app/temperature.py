@@ -18,7 +18,7 @@ class Celsius(Temperature):
     
     def convertKelvin(self):
         return Kelvin(self.temp + 273.15)
-    
+
 class Fahrenheit(Temperature):
     def __init__(self, temp):
         super().__init__(temp, "F")
@@ -31,7 +31,7 @@ class Fahrenheit(Temperature):
     
     def convertKelvin(self):
         return Kelvin((self.temp + 459.67) * 5/9)
-    
+
 class Kelvin(Temperature):
     def __init__(self, temp):
         super().__init__(temp, "K")
