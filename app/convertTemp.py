@@ -6,11 +6,14 @@ newScale = input("Enter the scale you want to convert the temperature to (Celsiu
 
 def convertTemperature(tempInput, scaleInput, newScale):
     conversions = {
+        ("Celsius", "Celsius"): cel(tempInput).convertCelsius,
         ("Celsius", "Fahrenheit"): cel(tempInput).convertFahrenheit,
         ("Celsius", "Kelvin"): cel(tempInput).convertKelvin,
         ("Fahrenheit", "Celsius"): fah(tempInput).convertCelsius,
+        ("Fahrenheit", "Fahrenheit"): fah(tempInput).convertFahrenheit,
         ("Fahrenheit", "Kelvin"): fah(tempInput).convertKelvin,
         ("Kelvin", "Celsius"): kel(tempInput).convertCelsius,
         ("Kelvin", "Fahrenheit"): kel(tempInput).convertFahrenheit,
+        ("Kelvin", "Kelvin"): kel(tempInput).convertKelvin
     }
     return conversions.get((scaleInput, newScale))()

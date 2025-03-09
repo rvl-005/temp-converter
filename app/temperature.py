@@ -12,6 +12,9 @@ class Celsius(Temperature):
         
     def __str__(self):
         return super().__str__()
+        
+    def convertCelsius(self):
+        return self.temp
     
     def convertFahrenheit(self):
         return Fahrenheit((self.temp * 1.8) + 32)
@@ -29,6 +32,9 @@ class Fahrenheit(Temperature):
     def convertCelsius(self):
         return Celsius((self.temp - 32) / 1.8)
     
+    def convertFahrenheit(self):
+        return self.temp
+    
     def convertKelvin(self):
         return Kelvin((self.temp + 459.67) * 5/9)
 
@@ -44,3 +50,6 @@ class Kelvin(Temperature):
     
     def convertFahrenheit(self):
         return Fahrenheit((self.temp * 9/5) - 459.67)
+    
+    def convertKelvin(self):
+        return self.temp
